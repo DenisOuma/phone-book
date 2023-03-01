@@ -6,9 +6,13 @@ import { AppComponent } from './app.component';
 
 // Import Angular material for icons
 import { MatIconModule } from '@angular/material/icon';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { SigninComponent } from './components/signin/signin.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NavbarComponent, SignupComponent, SigninComponent, ContactComponent],
   imports: [BrowserModule, AppRoutingModule, MatIconModule],
   providers: [],
   bootstrap: [AppComponent],
