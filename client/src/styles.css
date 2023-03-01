@@ -422,7 +422,11 @@ table th {
   font-weight: 500;
   font-size: 1rem;
 }
+.navbar a:active-link {
+  text-decoration: none;
 
+  color: red;
+}
 .navbar a:hover {
   color: var(--light-color);
 }
