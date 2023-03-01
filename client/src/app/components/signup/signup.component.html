@@ -1,22 +1,27 @@
 <div class="form-container">
   <h1>Account <span class="text-primary">Register</span></h1>
-  <form>
+  <form [formGroup]="signupForm" (ngSubmit)="signup()">
     <div class="form-group">
       <label for="name">Name</label>
-      <input type="text" name="name" />
+      <input type="text" formControlname="name" />
     </div>
     <div class="form-group">
       <label for="email">Email Address</label>
-      <input type="email" name="email" />
+      <input type="email" formControlname="email" />
     </div>
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" name="password" />
+      <input type="password" formControlname="password" />
     </div>
     <div class="form-group">
       <label for="password2">Confirm Password</label>
-      <input type="password" name="password2" />
+      <input type="password" formControlname="password2" />
     </div>
-    <input type="submit" value="Register" class="btn btn-primary btn-block" />
+    <input
+      type="submit"
+      [disabled]="!signupForm.valid"
+      value="Register"
+      class="btn btn-primary btn-block"
+    />
   </form>
 </div>

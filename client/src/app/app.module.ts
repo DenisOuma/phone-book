@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // Import Angular material for icons
 import { MatIconModule } from '@angular/material/icon';
@@ -24,7 +25,12 @@ import { AboutComponent } from './components/about/about.component';
     HomeComponent,
     AboutComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MatIconModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatIconModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
