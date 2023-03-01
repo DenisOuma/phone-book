@@ -27,22 +27,22 @@ The Keeper can only be used by a user who has registered an account.
 
 ### stem 1: To get to the page where you register an account, use the navigation in the page's upper left corner. When prompted, enter your credentials as needed and press Enter or click register button.
 
-<img src="./backend/images/register.png" width="800px"/>
+<img src="./phone-book/images/register.png" width="800px"/>
 
 <img src="./images/Screenshot from 2022-08-31 23-43-09.png" width="900px"/>
 
 ### step 3: If you already have an account, clicking the sign in button on the navbar will take you to a screen where you must enter both your email and password to access it. according to the picture below
 
-<img src="./backend/images/signin.png" width="900px"/>
+<img src="./phone-book/images/signin.png" width="900px"/>
 
 ### step 4: A form is provided where you may fill in the name, email, phone number, and choose if the contact is professional or personal. If you already have contacts created, they will be displayed as in the diagram when you log in.
 
-<img src="./backend/images/contacts.png" width="900px"/>
+<img src="./phone-book/images/contacts.png" width="900px"/>
 
 ### step 5: As seen in the images below, if you have more than 10 saved contacts, you can search for the person and also edit or delete a contact.
 
-<img src="./backend/images/search.png" width="900px"/>
-<img src="./backend/images/search2.png" width="900px"/>
+<img src="./phone-book/images/search.png" width="900px"/>
+<img src="./phone-book/images/search2.png" width="900px"/>
 
 ## Technologies
 
