@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -7,7 +8,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SignupComponent {
   signupForm: FormGroup;
-  constructor() {
+  constructor(private authService: AuthService) {
     this.signupForm = this.createFormGroup();
   }
 
@@ -27,6 +28,8 @@ export class SignupComponent {
   }
 
   signup(): void {
-    console.log(this.signupForm.value);
+    this.authService
+      .signup(this.signupForm.value)
+      .subscribe((msg: any) => console.log(msg));
   }
 }
