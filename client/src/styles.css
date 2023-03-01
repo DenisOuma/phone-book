@@ -418,6 +418,10 @@ table th {
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
+.navbar li {
+  font-weight: 500;
+  font-size: 1rem;
+}
 
 .navbar a:hover {
   color: var(--light-color);
@@ -484,5 +488,11 @@ table th {
   }
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
