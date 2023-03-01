@@ -378,6 +378,8 @@ button {
   margin: 2rem auto;
   overflow: hidden;
   padding: 0 2rem;
+  border: 1px solid var(--dark-color);
+  border-radius: 5px;
 }
 
 .form-container h1,
