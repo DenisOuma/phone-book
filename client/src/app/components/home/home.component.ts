@@ -55,16 +55,19 @@ export class HomeComponent {
   deleteContact(contactId: Pick<Contact, '_id'>): void {
     console.log('selected Id ==>', contactId);
     if (this.contact$) {
+      this.contact$ = this.contact$.pipe(
+        map((contacts) =>
+          contacts.filter((contact) => contact._id !== contactId._id)
+        )
+      );
+      this.filteredContacts$ = this.filteredContacts$?.pipe(
+        map((contacts) =>
+          contacts.filter((contact) => contact._id !== contactId._id)
+        )
+      );
       this.contactService
         .deleteContact({ _id: contactId._id })
-        .subscribe(() => {
-          console.log('Contact deleted successfully!');
-          this.contact$ = this.contact$?.pipe(
-            map((contacts) =>
-              contacts.filter((contact) => contact._id !== contactId._id)
-            )
-          );
-        });
+        .subscribe(() => console.log('Contact deleted successfully!'));
     }
   }
 }
