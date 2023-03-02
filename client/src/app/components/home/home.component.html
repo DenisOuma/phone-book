@@ -1,8 +1,28 @@
 <div class="grid-2">
   <div class="">
-    <app-contactform></app-contactform>
+    <app-contactform (create)="createPost()"></app-contactform>
   </div>
   <div class="contact">
-    <app-contact></app-contact>
+    <div class="card bg-light">
+      <h3 class="text-primary text-left">
+        Denis Ouma <span class="badge badge-success">professional</span>
+      </h3>
+      <ul class="list">
+        <li>
+          <mat-icon class="mg-r-icon"> contact_mail</mat-icon
+          >dennisouma38@gmail.com
+        </li>
+        <li><mat-icon class="mg-r-icon"> call_end</mat-icon>0758418552</li>
+      </ul>
+      <p>
+        <button class="btn btn-dark btn-sm btn-icon-d">
+          <mat-icon class="mg-r-icon">create</mat-icon>Edit
+        </button>
+        <button class="btn btn-danger btn-sm btn-icon-d">
+          <mat-icon class="mg-r-icon">delete_sweep</mat-icon>
+          Delete
+        </button>
+      </p>
+    </div>
   </div>
 </div>

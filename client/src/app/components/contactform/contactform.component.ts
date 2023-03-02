@@ -1,7 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Output, ViewChild, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { Contact } from 'src/app/models/Contact';
+// import { EventEmitter } from 'stream';
 @Component({
   selector: 'app-contactform',
   templateUrl: './contactform.component.html',
@@ -9,6 +10,7 @@ import { Contact } from 'src/app/models/Contact';
 })
 export class ContactformComponent {
   @ViewChild('formDirective') formDirective!: NgForm;
+  @Output() create: EventEmitter<any> = new EventEmitter();
   form: FormGroup;
 
   constructor() {
@@ -38,6 +40,9 @@ export class ContactformComponent {
     formData: Pick<Contact, 'firstName' | 'lastName' | 'email' | 'phone'>
   ): void {
     console.log(formData);
+    this.create.emit();
+    this.form.reset();
+
     this.formDirective.resetForm();
   }
 }
