@@ -10,7 +10,7 @@ import { ErrorHandlerService } from './error-handler.service';
   providedIn: 'root',
 })
 export class ContactService {
-  private url = 'http://localhost:3000/api';
+  private url = 'http://localhost:3000/api/contacts';
 
   httpOptions: { headers: HttpHeaders } = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -23,7 +23,7 @@ export class ContactService {
 
   fetchContacts(): Observable<Contact[]> {
     return this.http
-      .get<Contact[]>(`${this.url}/contacts`)
+      .get<Contact[]>(this.url)
       .pipe(
         catchError(
           this.errorHandlerService.handleError<Contact[]>('fetchAll', [])
@@ -36,7 +36,7 @@ export class ContactService {
   ): Observable<Contact> {
     return this.http
       .post<Contact>(
-        `${this.url}/contacts`,
+        this.url,
         {
           firstName: formData.firstName,
           lastName: formData.lastName,

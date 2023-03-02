@@ -3,16 +3,19 @@
     <app-contactform (create)="createContact()"></app-contactform>
   </div>
   <div class="contact">
-    <div class="card bg-light">
+    <div class="card bg-light" *ngFor="let contact of contact$ | async">
       <h3 class="text-primary text-left">
-        Denis Ouma <span class="badge badge-success">professional</span>
+        {{ contact.firstName }} {{ contact.lastName }}
+        <span class="badge badge-success">professional</span>
       </h3>
       <ul class="list">
         <li>
           <mat-icon class="mg-r-icon"> contact_mail</mat-icon
-          >dennisouma38@gmail.com
+          >{{ contact.email }}
         </li>
-        <li><mat-icon class="mg-r-icon"> call_end</mat-icon>0758418552</li>
+        <li>
+          <mat-icon class="mg-r-icon"> call_end</mat-icon>{{ contact.phone }}
+        </li>
       </ul>
       <p>
         <button class="btn btn-dark btn-sm btn-icon-d">

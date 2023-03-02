@@ -8,9 +8,13 @@ import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { AboutComponent } from './components/about/about.component';
 
+import { AuthGuardService } from './services/auth-guard.service';
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'contacts', component: ContactComponent },
+  { path: '', component: HomeComponent, canActivate: [AuthGuardService] },
+  {
+    path: 'contacts',
+    component: ContactComponent,
+  },
   { path: 'signup', component: SignupComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'about', component: AboutComponent },
