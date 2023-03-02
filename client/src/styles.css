@@ -52,6 +52,9 @@ img {
   align-items: center;
   /* justify-content: space-between; */
 }
+.mg-r-icon {
+  margin-right: 1rem;
+}
 .icon-style {
   color: var(--success-color);
   font-size: 1.5rem;
@@ -207,6 +210,10 @@ ul {
   display: flex;
   justify-content: space-between;
   /* width: 0%; */
+}
+.btn-icon-d {
+  display: flex;
+  align-items: center;
 }
 .delete-icon {
   color: var(--danger-color);

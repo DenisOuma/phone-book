@@ -1,12 +1,17 @@
-<form action="">
+<form
+  [formGroup]="form"
+  #formDirective="ngForm"
+  (ngSubmit)="onSubmit()"
+  novalidate
+>
   <h2 class="text-primary">Add Contact</h2>
-  <input type="text" placeholder="First Name" name="name" />
-  <input type="text" placeholder="Last Name" name="name" />
-  <input type="email" placeholder="Ex@gmmail.com" name="email" />
-  <input type="text" placeholder="Phone Number" name="Phone" />
+  <input type="text" placeholder="First Name" formControlName="name" />
+  <input type="text" placeholder="Last Name" formControlName="name" />
+  <input type="email" placeholder="Ex@gmmail.com" formControlName="email" />
+  <input type="text" placeholder="Phone Number" formControlName="Phone" />
   <h5>Choose Contact type</h5>
-  <input type="radio" name="type" value="personal" /> Personal
-  <input type="radio" name="type" value="personal" /> Professional
+  <input type="radio" formControlName="type" value="personal" /> Personal
+  <input type="radio" formControlName="type" value="personal" /> Professional
   <div class="">
     <input
       type="submit"
