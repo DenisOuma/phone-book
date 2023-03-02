@@ -1,5 +1,5 @@
 node_modules/
-/.default.json
+/config/default.json
 public/
 /client/build
 # dependencies
