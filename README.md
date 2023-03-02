@@ -50,8 +50,7 @@ The Keeper can only be used by a user who has registered an account.
 
         - HTML - Is used to build the structure of the pages.
         - CSS - Is used to style the pages.
-        - Reactjs - Is used to build the reactivity of the page and functionality.
-        - Matrial-UI- Icons - the icons showed on the app are imported from material ui website.
+        - Angular - Is used to build the reactivity of the page and functionality.
         - JavaScript - Functionality of the website includes, click events and search.
         - Nodjs - The website API is built with Nodejs.
         - MongoDB - All the users data are saved on mongoDB cluster.
@@ -62,20 +61,67 @@ The Keeper can only be used by a user who has registered an account.
 
 ## Program Setup
 
-Clone or download the project from the Github repository to run it. In either a .env file add your database cluster address link. Inside the config folder default.json file to configure your database and connect to your cluster. both on the client folder and the backend root folder, install each of the packages required via npm install. Using concurrent technology, the frontend and the backend both run, and to start both servers, use the npm run dev command. on your terminal it will show Server started on port 5000 first then Morife is sucessfully running 🏃🏃🏃🏃 will dhow when the db is connected succesfully.
+To get started with the frontend of the Phone Book application, follow these steps:
+
+## 1. Clone the repository from GitHub by running the following command in your terminal:
+
+git clone https://github.com/username/phone-book.git
+
+## 2. Navigate to the "client" directory:
+
+cd phone-book/client
+
+## 4. Install the required dependencies:
+
+    npm install
+
+## Usage
+
+To run the application, execute the following command:
+
+    ng serve
+
+This command will start the Angular development server and serve the application at http://localhost:4200. Open your browser and navigate to this URL to access the application.
+
+## Phone Book Application - Backend
+
+This is the backend part of the Phone Book application built with Node.js and Express. It allows the frontend to communicate with the database and perform CRUD operations.
+
+To get started with the backend of the Phone Book application, follow these steps:
+
+## 5. Navigate to the root directory of the project:
+
+    cd phone-book
+
+## 6. Create a directory called config in the root directory:
+
+    mkdir config
+
+## 7. Create a file called default.json in the config directory:
+
+    touch config/default.json
+
+## 8. Add the following code to the default.json file to connect to the MongoDB cluster:
+
+        {
+            "mongoURI": "your-mongodb-uri-here"
+        }
+
+Replace your-mongodb-uri-here with the actual URI of your MongoDB cluster.
+
+# To run the backend of the application, execute the following command: make sure you are in the phone-book directory
+
+    npm run server
+
+This command will start the Node.js server and allow the frontend to communicate with the database.
 
 ## Contact
 
     emain: dennisouma38@gmail.com
 
 linkedin:
+
 https://www.linkedin.com/in/denisouma/
-
-## Live GitHub Pages Link
-
-The webpage address:
-
-https://safe-inlet-41111.herokuapp.com/login
 
 ## License information
 
