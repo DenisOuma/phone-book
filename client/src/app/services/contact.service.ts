@@ -25,9 +25,10 @@ export class ContactService {
 
   fetchContacts(): Observable<Contact[]> {
     return this.http.get<Contact[]>(this.url).pipe(
-      map((contacts) =>
-        contacts.sort((a, b) => a.firstName.localeCompare(b.firstName))
-      ),
+      map((contacts) => {
+        console.log(contacts);
+        return contacts.sort((a, b) => a.firstName.localeCompare(b.firstName));
+      }),
       catchError(
         this.errorHandlerService.handleError<Contact[]>('fetchAll', [])
       )
@@ -57,9 +58,10 @@ export class ContactService {
       );
   }
 
-  deleteContact(contactId: Pick<Contact, 'id'>): Observable<{}> {
+  deleteContact(contactId: Pick<Contact, '_id'>): Observable<{}> {
+    console.log(contactId._id);
     return this.http
-      .delete<Contact>(`${this.url}/${contactId}`, this.httpOptions)
+      .delete<Contact>(`${this.url}/${contactId._id}`, this.httpOptions)
       .pipe(
         first(),
         catchError(

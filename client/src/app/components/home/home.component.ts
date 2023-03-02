@@ -52,10 +52,19 @@ export class HomeComponent {
     this.contact$ = this.fetchContacts();
   }
 
-  deleteContact(contactId: Pick<Contact, 'id'>): void {
+  deleteContact(contactId: Pick<Contact, '_id'>): void {
     console.log('selected Id ==>', contactId);
-    this.contactService
-      .deleteContact(contactId)
-      .subscribe(() => (this.contact$ = this.fetchContacts()));
+    if (this.contact$) {
+      this.contactService
+        .deleteContact({ _id: contactId._id })
+        .subscribe(() => {
+          console.log('Contact deleted successfully!');
+          this.contact$ = this.contact$?.pipe(
+            map((contacts) =>
+              contacts.filter((contact) => contact._id !== contactId._id)
+            )
+          );
+        });
+    }
   }
 }
