@@ -4,9 +4,16 @@
   </div>
   <div class="contact">
     <form action="">
-      <input type="text" placeholder="Search for contact...." />
+      <input
+        type="text"
+        placeholder="Search for contact...."
+        (input)="filterContacts($event)"
+      />
     </form>
-    <div class="card bg-light" *ngFor="let contact of contact$ | async">
+    <div
+      class="card bg-light"
+      *ngFor="let contact of filteredContacts$ | async"
+    >
       <h3 class="text-primary text-left">
         {{ contact.firstName }} {{ contact.lastName }}
         <span class="badge badge-success">professional</span>

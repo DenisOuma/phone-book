@@ -443,6 +443,11 @@ table th {
 .navbar .welcome span {
   margin-right: 0.6rem;
 }
+.logo-font {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
 
 /* Animation (Add After) Transition effect */
 .item-enter {

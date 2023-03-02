@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, startWith } from 'rxjs/operators';
 import { ContactService } from 'src/app/services/contact.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { User } from 'src/app/models/User';
@@ -32,7 +32,8 @@ export class HomeComponent {
     return this.contactService.fetchContacts();
   }
 
-  filterContacts(searchTerm: string): void {
+  filterContacts(event: Event): void {
+    const searchTerm = (event.target as HTMLInputElement).value;
     console.log(searchTerm);
     this.filteredContacts$ = this.contact$?.pipe(
       map((contacts) =>
