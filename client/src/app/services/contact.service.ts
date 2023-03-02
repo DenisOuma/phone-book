@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { first, catchError } from 'rxjs/operators';
 import { ErrorHandlerService } from './error-handler.service';
+import { map } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -22,13 +24,14 @@ export class ContactService {
   ) {}
 
   fetchContacts(): Observable<Contact[]> {
-    return this.http
-      .get<Contact[]>(this.url)
-      .pipe(
-        catchError(
-          this.errorHandlerService.handleError<Contact[]>('fetchAll', [])
-        )
-      );
+    return this.http.get<Contact[]>(this.url).pipe(
+      map((contacts) =>
+        contacts.sort((a, b) => a.firstName.localeCompare(b.firstName))
+      ),
+      catchError(
+        this.errorHandlerService.handleError<Contact[]>('fetchAll', [])
+      )
+    );
   }
   createContact(
     formData: Partial<Contact>,

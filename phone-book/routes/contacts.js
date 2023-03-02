@@ -30,7 +30,7 @@ router.post(
 		}
 
 		const { firstName, lastName, email, phone, type } = req.body;
-		console.log("HHHere is my Body", req.body);
+
 		try {
 			const newContact = new Contact({
 				firstName,
