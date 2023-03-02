@@ -21,18 +21,19 @@ router.get("/", auth, async (req, res) => {
 router.post(
 	"/",
 	[auth],
-	[check("name", "Name is required").not().isEmpty()],
+	[check("firstName", "Name is required").not().isEmpty()],
 	async (req, res) => {
 		const errors = validationResult(req);
 		if (!errors.isEmpty()) {
 			return res.status(400).json({ errors: errors.array() });
 		}
 
-		const { name, email, phone, type } = req.body;
+		const { firstName, lastName, email, phone, type } = req.body;
 
 		try {
 			const newContact = new Contact({
-				name,
+				firstName,
+				lastName,
 				email,
 				phone,
 				type,
@@ -50,10 +51,12 @@ router.post(
 );
 
 router.put("/:id", auth, async (req, res) => {
-	const { name, email, phone, type } = req.body;
+	const { firstName, lastName, email, phone, type } = req.body;
 
 	const contactFields = {};
-	if (name) contactFields.name = name;
+	if (firstName) contactFields.name = firstName;
+	if (lastName) contactFields.name = lastName;
+
 	if (email) contactFields.email = email;
 	if (phone) contactFields.phone = phone;
 	if (type) contactFields.type = type;
