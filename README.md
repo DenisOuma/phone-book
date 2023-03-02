@@ -93,21 +93,11 @@ To get started with the backend of the Phone Book application, follow these step
 
     cd phone-book
 
-## 6. Create a directory called config in the root directory:
+## 6. Run npm install to install all the packages required:
 
-    mkdir config
+    npm install
 
 ## 7. Create a file called default.json in the config directory:
-
-    touch config/default.json
-
-## 8. Add the following code to the default.json file to connect to the MongoDB cluster:
-
-        {
-            "mongoURI": "your-mongodb-uri-here"
-        }
-
-Replace your-mongodb-uri-here with the actual URI of your MongoDB cluster.
 
 # To run the backend of the application, execute the following command: make sure you are in the phone-book directory
 
