@@ -1,7 +1,7 @@
 <form
   [formGroup]="form"
   #formDirective="ngForm"
-  (ngSubmit)="onSubmit()"
+  (ngSubmit)="onSubmit(form.value)"
   novalidate
 >
   <h2 class="text-primary">Add Contact</h2>
