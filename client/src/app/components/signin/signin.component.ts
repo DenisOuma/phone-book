@@ -26,6 +26,8 @@ export class SigninComponent {
     });
   }
   login(): void {
-    console.log('Welcome');
+    this.authService
+      .login(this.signinForm.value.email, this.signinForm.value.password)
+      .subscribe();
   }
 }
