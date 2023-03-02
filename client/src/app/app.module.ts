@@ -4,7 +4,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
 // Import Angular material for icons
 import { MatIconModule } from '@angular/material/icon';
 
@@ -34,6 +34,7 @@ import { AuthInterceptorService } from './services/auth-interceptor.service';
     MatIconModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [
     {

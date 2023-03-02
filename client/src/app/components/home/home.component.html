@@ -3,6 +3,9 @@
     <app-contactform (create)="createContact()"></app-contactform>
   </div>
   <div class="contact">
+    <form action="">
+      <input type="text" placeholder="Search for contact...." />
+    </form>
     <div class="card bg-light" *ngFor="let contact of contact$ | async">
       <h3 class="text-primary text-left">
         {{ contact.firstName }} {{ contact.lastName }}
@@ -21,7 +24,10 @@
         <button class="btn btn-dark btn-sm btn-icon-d">
           <mat-icon class="mg-r-icon">create</mat-icon>Edit
         </button>
-        <button class="btn btn-danger btn-sm btn-icon-d">
+        <button
+          class="btn btn-danger btn-sm btn-icon-d"
+          (click)="deleteContact({ id: contact.id })"
+        >
           <mat-icon class="mg-r-icon">delete_sweep</mat-icon>
           Delete
         </button>
