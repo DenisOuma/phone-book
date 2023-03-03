@@ -11,7 +11,11 @@
       />
     </form>
     <div class="grid-view">
-      <button (click)="toggleDisplayMode()">Display Mode</button>
+      <div class=""></div>
+      <button class="btn btn-success toggle-btn" (click)="toggleDisplayMode()">
+        <mat-icon>remove_red_eye</mat-icon>
+        <p>Display Mode</p>
+      </button>
     </div>
     <div class="" *ngIf="displayMode === 'list'">
       <div
@@ -64,6 +68,18 @@
               <mat-icon class="mg-r-icon"> call_end</mat-icon
               >{{ contact.phone }}
             </p>
+            <div class="action-btn">
+              <button class="btn btn-dark btn-sm btn-icon-d">
+                <mat-icon class="mg-r-icon">create</mat-icon>Edit
+              </button>
+              <button
+                class="btn btn-danger btn-sm btn-icon-d"
+                (click)="deleteContact({ _id: contact._id })"
+              >
+                <mat-icon class="mg-r-icon">delete_sweep</mat-icon>
+                Delete
+              </button>
+            </div>
           </div>
         </div>
       </div>

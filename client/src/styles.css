@@ -450,6 +450,21 @@ table th {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   /* width: 30%; */
+}
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.toggle-btn > p {
+  margin-left: 5px;
+}
+.grid-view {
+  display: flex;
+  justify-content: space-between;
+}
+.action-btn {
+  display: flex;
   margin-top: 1rem;
 }
 .navbar .welcome span {
