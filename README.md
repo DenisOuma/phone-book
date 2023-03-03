@@ -42,6 +42,9 @@ The Keeper can only be used by a user who has registered an account.
 ### step 5: As seen in the images below, if you have more than 10 saved contacts, you can search for the person and also edit or delete a contact.
 
 <img src="./phone-book/images/search.png" width="900px"/>
+
+### 6: User is able to view the Image in grid format or list format
+
 <img src="./phone-book/images/search2.png" width="900px"/>
 
 ## Technologies
