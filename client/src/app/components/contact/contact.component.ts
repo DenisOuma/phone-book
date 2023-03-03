@@ -5,6 +5,4 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './contact.component.html',
   styles: [],
 })
-export class ContactComponent {
-  
-}
+export class ContactComponent {}
