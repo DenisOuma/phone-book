@@ -10,35 +10,63 @@
         (input)="filterContacts($event)"
       />
     </form>
-    <div
-      class="card bg-light"
-      *ngFor="let contact of filteredContacts$ | async"
-    >
-      <h3 class="text-primary text-left">
-        {{ contact.firstName }} {{ contact.lastName }}
-        <span class="badge badge-success">professional</span>
-      </h3>
-      <ul class="list">
-        <li>
-          <mat-icon class="mg-r-icon"> contact_mail</mat-icon
-          >{{ contact.email }}
-        </li>
-        <li>
-          <mat-icon class="mg-r-icon"> call_end</mat-icon>{{ contact.phone }}
-        </li>
-      </ul>
-      <p>
-        <button class="btn btn-dark btn-sm btn-icon-d">
-          <mat-icon class="mg-r-icon">create</mat-icon>Edit
-        </button>
-        <button
-          class="btn btn-danger btn-sm btn-icon-d"
-          (click)="deleteContact({ _id: contact._id })"
+    <div class="grid-view">
+      <button (click)="toggleDisplayMode()">Display Mode</button>
+    </div>
+    <div class="" *ngIf="displayMode === 'list'">
+      <div
+        class="card bg-light"
+        *ngFor="let contact of filteredContacts$ | async"
+      >
+        <h3 class="text-primary text-left">
+          {{ contact.firstName }} {{ contact.lastName }}
+          <span class="badge badge-success">professional</span>
+        </h3>
+        <ul class="list">
+          <li>
+            <mat-icon class="mg-r-icon"> contact_mail</mat-icon
+            >{{ contact.email }}
+          </li>
+          <li>
+            <mat-icon class="mg-r-icon"> call_end</mat-icon>{{ contact.phone }}
+          </li>
+        </ul>
+        <p>
+          <button class="btn btn-dark btn-sm btn-icon-d">
+            <mat-icon class="mg-r-icon">create</mat-icon>Edit
+          </button>
+          <button
+            class="btn btn-danger btn-sm btn-icon-d"
+            (click)="deleteContact({ _id: contact._id })"
+          >
+            <mat-icon class="mg-r-icon">delete_sweep</mat-icon>
+            Delete
+          </button>
+        </p>
+      </div>
+    </div>
+    <div *ngIf="displayMode === 'grid'">
+      <div class="grid-card-c">
+        <div
+          class="card bg-light"
+          *ngFor="let contact of filteredContacts$ | async"
         >
-          <mat-icon class="mg-r-icon">delete_sweep</mat-icon>
-          Delete
-        </button>
-      </p>
+          <h3 class="text-primary text-left">
+            {{ contact.firstName }} {{ contact.lastName }}
+            <span class="badge badge-success">professional</span>
+          </h3>
+          <div class="card-body">
+            <p>
+              <mat-icon class="mg-r-icon"> contact_mail</mat-icon
+              >{{ contact.email }}
+            </p>
+            <p>
+              <mat-icon class="mg-r-icon"> call_end</mat-icon
+              >{{ contact.phone }}
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -439,7 +439,19 @@ table th {
 .navbar a:hover {
   color: var(--light-color);
 }
-
+.grid-card-c {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  /* background-color: red; */
+}
+.card-grid-data {
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* width: 30%; */
+  margin-top: 1rem;
+}
 .navbar .welcome span {
   margin-right: 0.6rem;
 }

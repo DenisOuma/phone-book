@@ -10,7 +10,7 @@ import { AboutComponent } from './components/about/about.component';
 
 import { AuthGuardService } from './services/auth-guard.service';
 const routes: Routes = [
-  { path: '', component: HomeComponent, canActivate: [AuthGuardService] },
+  { path: '', component: HomeComponent },
   {
     path: 'contacts',
     component: ContactComponent,
@@ -26,3 +26,5 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
+
+// , canActivate: [AuthGuardService]

@@ -16,6 +16,7 @@ export class HomeComponent {
   filteredContacts$: Observable<Contact[]> | undefined = undefined;
   userId: number | undefined;
   searchTerm: string = '';
+  displayMode: 'list' | 'grid' = 'list';
 
   constructor(
     private contactService: ContactService,
@@ -69,5 +70,9 @@ export class HomeComponent {
         .deleteContact({ _id: contactId._id })
         .subscribe(() => console.log('Contact deleted successfully!'));
     }
+  }
+
+  toggleDisplayMode(): void {
+    this.displayMode = this.displayMode === 'list' ? 'grid' : 'list';
   }
 }
